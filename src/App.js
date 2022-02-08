@@ -1,5 +1,6 @@
 import './App.css';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './GlobalStyle';
 
 const lightTheme = {
   colors: {
@@ -27,6 +28,7 @@ const lightTheme = {
 function App() {
   return (
     <ThemeProvider theme={lightTheme}>
+      <GlobalStyle />
       <div>Hello</div>
     </ThemeProvider>
   );
