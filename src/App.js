@@ -2,6 +2,7 @@ import './App.css';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import Title from './components/Title';
+import ExamplesList from './components/ExamplesList';
 
 const lightTheme = {
   colors: {
@@ -31,6 +32,7 @@ function App() {
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <Title />
+      <ExamplesList />
     </ThemeProvider>
   );
 }
