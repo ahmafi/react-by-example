@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from 'styled-components';
+
+const lightTheme = {
+  colors: {
+    background: '#F0F0F3',
+    text: '#728AB7',
+    lightShadow: '#FFFFFF',
+    darkShadow: '#AEAEC064',
+  },
+  values: {
+    listItem: {
+      lightShadow: {
+        x: -2,
+        y: -2,
+        blur: 3,
+      },
+      darkShadow: {
+        x: 2.5,
+        y: 2.5,
+        blur: 3,
+      },
+    },
+  },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <div>Hello</div>
+    </ThemeProvider>
   );
 }
 
