@@ -11,6 +11,15 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    font-size: 62.5%;
+  }
+
+  .stopScroll {
+    overflow: hidden;
   }
 
   html,
@@ -20,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-size: 1.6rem;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     font-family: 'roboto';
@@ -57,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  body {
+  html {
     background-color: ${({ theme }) => theme.colors.background};
   }
 
@@ -65,7 +75,26 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.colors.text};
-    margin: 8px 32px;
+    ${'' /* margin: 0px 32px; */}
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  body::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.lightShadow} inset,
+      -3px -3px 4px ${({ theme }) => theme.colors.darkShadow} inset;
+    border-radius: 5px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.text};
+    border-radius: 5px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: ${({ theme }) => theme.colors.text2};
   }
 `;
 
