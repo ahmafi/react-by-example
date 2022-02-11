@@ -31,8 +31,8 @@ const Container = styled.ul`
 
   &::-webkit-scrollbar-track {
     border-radius: 3px;
-    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.lightShadow} inset,
-      -3px -3px 4px ${({ theme }) => theme.colors.darkShadow} inset;
+    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.topShadow} inset,
+      -3px -3px 4px ${({ theme }) => theme.colors.botShadow} inset;
   }
 
   &::-webkit-scrollbar-thumb {

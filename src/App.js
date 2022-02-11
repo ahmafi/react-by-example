@@ -5,14 +5,25 @@ import TopBar from './components/TopBar';
 import ExamplesList from './components/ExamplesList';
 import CodeBlock from './components/CodeBlock';
 import { FlexBox } from 'react-styled-flex';
+import { useState } from 'react';
 
 const lightTheme = {
   colors: {
     background: '#F0F0F3',
     text: '#728AB7',
     text2: '#507ed4',
-    lightShadow: '#FFFFFF',
-    darkShadow: '#AEAEC066',
+    topShadow: '#AEAEC066',
+    botShadow: '#FFFFFF',
+  },
+};
+
+const darkTheme = {
+  colors: {
+    background: '#2e2e2e',
+    text: '#728AB7',
+    text2: '#507ed4',
+    topShadow: '#3a3a3a',
+    botShadow: '#232323',
   },
 };
 
@@ -23,11 +34,19 @@ const values = {
 };
 
 function App() {
+  const [theme, setTheme] = useState('dark');
+
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  };
+
   return (
-    <ThemeProvider theme={{ ...lightTheme, ...values }}>
+    <ThemeProvider
+      theme={{ ...(theme === 'light' ? lightTheme : darkTheme), ...values }}
+    >
       <GlobalStyle />
       <FlexBox column height={'100%'}>
-        <TopBar />
+        <TopBar theme={theme} toggleTheme={toggleTheme} />
         <FlexBox height={'100%'}>
           <ExamplesList />
           <FlexBox

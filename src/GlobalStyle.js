@@ -83,8 +83,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-track {
-    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.lightShadow} inset,
-      -3px -3px 4px ${({ theme }) => theme.colors.darkShadow} inset;
+    margin-top: ${({ theme }) => theme.values.topBarHeight};
+    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.topShadow} inset,
+      -3px -3px 4px ${({ theme }) => theme.colors.botShadow} inset;
     border-radius: 5px;
   }
 

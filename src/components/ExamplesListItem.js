@@ -12,8 +12,8 @@ const ListItem = styled.li`
   align-items: center;
 
   border-radius: 6px;
-  box-shadow: 2.5px 2.5px 3px ${({ theme }) => theme.colors.darkShadow},
-    -2px -2px 3px ${({ theme }) => theme.colors.lightShadow};
+  box-shadow: 2.5px 2.5px 3px ${({ theme }) => theme.colors.topShadow},
+    -2px -2px 3px ${({ theme }) => theme.colors.botShadow};
 
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
