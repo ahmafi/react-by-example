@@ -47,36 +47,34 @@ const Container = styled.ul`
 
 const data = [
   'Hello World',
-  'Introducing JSX',
-  'Rendering Elements',
-  'Components and Props',
-  'State and Lifecycle',
-  'Handling Events',
-  'Conditional Rendering',
-  'Lists and Keys',
-  'Forms',
-  'Lifting State Up',
-  'Composition vs Inheritance',
-  'Thinking In React',
-  'Hello World',
-  'Introducing JSX',
-  'Rendering Elements',
-  'Components and Props',
-  'State and Lifecycle',
-  'Handling Events',
-  'Conditional Rendering',
-  'Lists and Keys',
-  'Forms',
-  'Lifting State Up',
-  'Composition vs Inheritance',
-  'Thinking In React',
+  'JSX',
+  'Props',
+  'example 4',
+  'example 5',
+  'example 6',
+  'example 7',
+  'example 8',
+  'example 9',
+  'example 10',
+  'example 11',
+  'example 12',
+  'example 13',
+  'example 14',
+  'example 15',
+  'example 16',
+  'example 17',
+  'example 18',
+  'example 19',
+  'example 20',
+  'example 21',
+  'example 22',
 ];
 
 function ExamplesList() {
   return (
     <Container>
       {data.map((item) => (
-        <ExamplesListItem text={item} />
+        <ExamplesListItem title={item} key={item} />
       ))}
     </Container>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const ListItem = styled.li`
   width: 26rem;
-  min-height: 3.95rem;
+  height: 3.95rem;
 
   margin-bottom: 1.1rem;
   margin-left: 0.8rem;
@@ -16,7 +17,6 @@ const ListItem = styled.li`
     -2px -2px 3px ${({ theme }) => theme.colors.botShadow};
 
   background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.text};
 
   cursor: pointer;
 
@@ -27,19 +27,30 @@ const ListItem = styled.li`
   }
 `;
 
-const Text = styled.div`
+const ExampleLink = styled(Link)`
+  width: 100%;
+  line-height: 3.95rem;
+
   padding-right: 1rem;
   padding-left: 1rem;
 
   font-size: 1.8rem;
 
   user-select: none;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
-function ExamplesListItem(props) {
+/**
+ *
+ * @param {string} title The title of the example
+ */
+const titleToPath = (title) => title.replaceAll(' ', '-').toLowerCase();
+
+function ExamplesListItem({ title }) {
   return (
     <ListItem>
-      <Text>{props.text}</Text>
+      <ExampleLink to={titleToPath(title)}>{title}</ExampleLink>
     </ListItem>
   );
 }

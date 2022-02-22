@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import TopBar from './components/TopBar';
 import ExamplesList from './components/ExamplesList';
-import CodeBlock from './components/CodeBlock';
 import { FlexBox } from 'react-styled-flex';
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const lightTheme = {
   colors: {
@@ -55,14 +55,10 @@ function App() {
             height={'100%'}
             ml={'29.4rem'}
             mt={values.values.topBarHeight}
-            mr={'1rem'}
+            mr={'2rem'}
+            pt={'1rem'}
           >
-            {/* these children are only for testing purposes */}
-            {[...Array(20).keys()].map((k) => (
-              <CodeBlock>{k}</CodeBlock>
-            ))}
-            <CodeBlock>100</CodeBlock>
-            <CodeBlock>101</CodeBlock>
+            <Outlet />
           </FlexBox>
         </FlexBox>
       </FlexBox>
